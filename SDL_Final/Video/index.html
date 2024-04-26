@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source src="vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controls">
+            <button onclick="playPause()">Play/Pause</button>
+            <button onclick="stopVideo()">Stop</button>
+            <button onclick="muteUnmute()">Mute/Unmute</button>
+            <button onclick="volumeUp()">Volume Up</button>
+            <button onclick="volumeDown()">Volume Down</button>
+            <button onclick="toggleFullScreen()">Full Screen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

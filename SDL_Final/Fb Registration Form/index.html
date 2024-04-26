@@ -1,0 +1,243 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4267B2;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #385898;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Facebook Registration</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <input type="text" id="firstName" placeholder="First Name">
+            <div id="firstNameError" class="error"></div>
+            <input type="text" id="lastName" placeholder="Last Name">
+            <div id="lastNameError" class="error"></div>
+            <input type="email" id="email" placeholder="Email">
+            <div id="emailError" class="error"></div>
+            <input type="password" id="password" placeholder="Password">
+            <div id="passwordError" class="error"></div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var firstNameError = document.getElementById("firstNameError");
+            var lastNameError = document.getElementById("lastNameError");
+            var emailError = document.getElementById("emailError");
+            var passwordError = document.getElementById("passwordError");
+
+            var isValid = true;
+
+            if (firstName.trim() === "") {
+                firstNameError.innerHTML = "First name is required";
+                isValid = false;
+            } else {
+                firstNameError.innerHTML = "";
+            }
+
+            if (lastName.trim() === "") {
+                lastNameError.innerHTML = "Last name is required";
+                isValid = false;
+            } else {
+                lastNameError.innerHTML = "";
+            }
+
+            if (email.trim() === "") {
+                emailError.innerHTML = "Email is required";
+                isValid = false;
+            } else {
+                emailError.innerHTML = "";
+            }
+
+            if (password.trim() === "") {
+                passwordError.innerHTML = "Password is required";
+                isValid = false;
+            } else {
+                passwordError.innerHTML = "";
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FB Registration Form OnSubmit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+      }
+      h2{
+        text-align: center;
+      }
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      button[type="submit"] {
+        width: 100%;
+        background-color: #4267b2;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #385898;
+      }
+      .error {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Facebook Registration</h2>
+      <form
+        id="registrationform"
+        class="fbform"
+        onsubmit="return validateform()"
+      >
+        <input type="text" id="firstname" placeholder="First Name" /><br />
+        <input type="text" id="lastname" placeholder="Last Name" /><br />
+        <input type="number" id="phonenumber" placeholder="Mob No." /><br />
+        <input type="email" id="email" placeholder="Email" /><br />
+        <input type="text" id="username" placeholder="Username" /><br />
+        <input type="password" id="password" placeholder="Password" /><br />
+        <button type="submit" id="submitbtn" value="Register">Register</button
+        ><br />
+      </form>
+    </div>
+    <script>
+      function validateform() {
+        var fname = document.getElementById("firstname").value;
+        var lname = document.getElementById("lastname").value;
+        var number = document.getElementById("phonenumber").value;
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+
+        if (
+          fname == "" ||
+          lname == "" ||
+          number == "" ||
+          email == "" ||
+          username == "" ||
+          pass == ""
+        ) {
+          alert("Fill all details!!");
+          return false;
+        }
+
+        if (fname == "") {
+          alert("First Name Should not be Empty!!");
+          return false;
+        }
+
+        if (lname == "") {
+          alert("Last Name Should not be Empty!!");
+          return false;
+        }
+
+        var phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(number)) {
+          alert("Please enter a valid 10-digit phone number.");
+          return false;
+        }
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        if (
+          username.length == 0 ||
+          username.length <= 4 ||
+          username.length >= 8
+        ) {
+          alert("UserName should not be empty / length be between 4-8");
+          return false;
+        }
+
+        if (pass.length == 0 || pass.length <= 4 || pass.length >= 8) {
+          alert("Password should not be empty / length be between 4-8");
+          return false;
+        }
+
+        alert("Form Submitted Successfully!!");
+        return true;
+      }
+    </script>
+  </body>
+</html>

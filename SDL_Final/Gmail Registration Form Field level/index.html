@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail Registration Form FieldSubmit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+      }
+      h2 {
+        text-align: center;
+      }
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="number"],
+      select,
+      option {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      button[type="submit"] {
+        width: 100%;
+        background-color: #e31212d1;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: rgb(122, 8, 8);
+      }
+      .error {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body onload="firstFocus()">
+    <div class="container">
+      <h2>Gmail Registration</h2>
+      <form
+        id="gmailform"
+        class="fbform"
+        name="gmailform"
+        onsubmit="validateform();"
+      >
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          onblur="allLetterFirst();"
+        /><br />
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          onblur="allLetterLast();"
+        /><br />
+        <input
+          type="number"
+          id="phoneNumber"
+          name="phoneNumber"
+          placeholder="Mob No."
+          onblur="allnumeric();"
+        /><br />
+        <input
+          type="email"
+          id="Email"
+          name="Email"
+          placeholder="Email"
+          onblur="validateemail();"
+        /><br />
+        <input
+          type="text"
+          id="userName"
+          name="userName"
+          placeholder="Username"
+          onblur="uservalidation();"
+        /><br />
+        <input
+          type="password"
+          id="Password"
+          name="Password"
+          placeholder="Password"
+          onblur="passvalidation();"
+        /><br />
+        <input
+          type="text"
+          id="Address"
+          name="Address"
+          placeholder="Address"
+          onblur="alphanumeric();"
+        /><br />
+        <select id="country" name="country" onblur="countryselect();">
+          <option selected="" value="Default">(Please select a country)</option>
+          <option value="AF">Australia</option>
+          <option value="AL">Canada</option>
+          <option value="DZ">India</option>
+          <option value="AS">Russia</option>
+          <option value="AD">USA</option></select
+        ><br />
+
+        <input type="radio"  name="sex" value="Male" checked /><span
+          >Male</span
+        >
+        <input type="radio"  name="sex" value="Female" /><span
+          >Female</span
+        >
+        <br />
+        <br />
+        <button
+          type="submit"
+          id="Submit"
+          name="Submit"
+          value="Register"
+          
+        >
+          Register</button
+        ><br />
+      </form>
+    </div>
+    <script src="val.js">
+    </script>
+  </body>
+</html>

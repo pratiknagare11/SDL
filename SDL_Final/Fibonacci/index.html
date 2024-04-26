@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fibonacci Series</h1>
+        <input type="number" id="fibonacciInput" placeholder="Enter the number of Fibonacci numbers">
+        <button onclick="generateFibonacciSeries()">Generate Series</button>
+        <p id="fibonacciSeries"></p>
+    </div>
+
+    <script>
+        function generateFibonacciSeries() {
+            var n = document.getElementById('fibonacciInput').value;
+            var fibonacciSeries = [];
+            var a = 0, b = 1;
+            for (var i = 0; i < n; i++) {
+                fibonacciSeries.push(a);
+                var temp = a + b;
+                a = b;
+                b = temp;
+            }
+            var output = "";
+            for (var i = 0; i < fibonacciSeries.length; i++) {
+                output += fibonacciSeries[i] + ", ";
+            }
+            document.getElementById('fibonacciSeries').textContent = output.slice(0, -2);
+        }
+    </script>
+</body>
+</html>
